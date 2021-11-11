@@ -59,7 +59,7 @@ public class HeelsMechanics : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name.Equals("Wall"))
+        if (collision.gameObject.CompareTag("Wall"))
         {
             //from wich direction we hit obstacle
             float angle = Vector3.Dot(collision.GetContact(0).normal, Vector3.forward);

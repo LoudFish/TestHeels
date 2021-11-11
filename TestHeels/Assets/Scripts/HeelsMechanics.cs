@@ -26,13 +26,13 @@ public class HeelsMechanics : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             //rise player and make heel collider bigger
-            RiseUpPlayer();
+            RiseUpPlayer(_heelSize);
 
-            GrowHeelsCollider();
+            GrowHeelsCollider(1);
 
             //make heel graphics bigger
-            GrowHeelsGraphics(leftHeel);
-            GrowHeelsGraphics(rightHeel);
+            GrowHeelsGraphics(leftHeel, 1);
+            GrowHeelsGraphics(rightHeel, 1);
 
             heelsCount++;
         }
@@ -42,6 +42,7 @@ public class HeelsMechanics : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Wall"))
         {
+            //from wich direction we hit obstacle
             float angle = Vector3.Dot(collision.GetContact(0).normal, Vector3.forward);
 
             float wallSizeInHeels = collision.transform.localScale.y * 2f;
@@ -50,18 +51,14 @@ public class HeelsMechanics : MonoBehaviour
             {
                 if (heelsCount > 0 && angle != 0)
                 {
-                    transform.position += new Vector3(0f, 0.08f, 0f);
+                    RiseUpPlayer(0.08f);
 
                     //heels collider
-                    _heelsCollider.size -= _colliderHeight;
-                    _heelsCollider.center += _colliderOffset;
+                    GrowHeelsCollider(-1);
 
                     //heels graphics
-                    leftHeel.localScale -= new Vector3(0f, _heelSize, 0f);
-                    leftHeel.localPosition += new Vector3(0f, _colliderCenterOffset, 0f);
-
-                    rightHeel.localScale -= new Vector3(0f, _heelSize, 0f);
-                    rightHeel.localPosition += new Vector3(0f, _colliderCenterOffset, 0f);
+                    GrowHeelsGraphics(leftHeel, -1);
+                    GrowHeelsGraphics(rightHeel, -1);
 
                     heelsCount--;
                 }
@@ -70,20 +67,20 @@ public class HeelsMechanics : MonoBehaviour
         }
     }
 
-    private void RiseUpPlayer()
+    private void RiseUpPlayer(float height)
     {
-        transform.position += new Vector3(0f, _heelSize, 0f);
+        transform.position += new Vector3(0f, height, 0f);
     }
 
-    private void GrowHeelsCollider()
+    private void GrowHeelsCollider(int sign)
     {
-        _heelsCollider.size += _colliderHeight;
-        _heelsCollider.center -= _colliderOffset;
+        _heelsCollider.size += _colliderHeight * sign;
+        _heelsCollider.center -= _colliderOffset * sign;
     }
 
-    private void GrowHeelsGraphics(Transform heel)
+    private void GrowHeelsGraphics(Transform heel, int sign)
     {
-        heel.localScale += new Vector3(0f, _heelSize, 0f);
-        heel.localPosition -= new Vector3(0f, _colliderCenterOffset, 0f);
+        heel.localScale += new Vector3(0f, _heelSize, 0f) * sign;
+        heel.localPosition -= new Vector3(0f, _colliderCenterOffset, 0f) * sign;
     }
 }

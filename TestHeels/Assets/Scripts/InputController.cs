@@ -17,24 +17,9 @@ public class InputController : MonoBehaviour
         {
             _touchStart = true;
 
-            if (Input.mousePosition != _touchPont)
-            {
-                _touchPont = Input.mousePosition;
+            DetectMouseMoving();
 
-                _mouseMoving = true;
-            }
-            else _mouseMoving = false;
-
-            _horizontalMouseDirection = Input.GetAxisRaw("Mouse X");
-
-            if (_horizontalMouseDirection > 0)
-            {
-                _mouseMovingDirection = 1;
-            }
-            else if (_horizontalMouseDirection < 0)
-            {
-                _mouseMovingDirection = -1;
-            }
+            DetectMouseDirection();
         }
         else _touchStart = false;
     }
@@ -42,5 +27,30 @@ public class InputController : MonoBehaviour
     private void FixedUpdate()
     {
         if (_touchStart && _mouseMoving) PlayerController.Instance.Move(_mouseMovingDirection);
+    }
+
+    private void DetectMouseMoving()
+    {
+        if (Input.mousePosition != _touchPont)
+        {
+            _touchPont = Input.mousePosition;
+
+            _mouseMoving = true;
+        }
+        else _mouseMoving = false;
+    }
+
+    private void DetectMouseDirection()
+    {
+        _horizontalMouseDirection = Input.GetAxisRaw("Mouse X");
+
+        if (_horizontalMouseDirection > 0)
+        {
+            _mouseMovingDirection = 1;
+        }
+        else if (_horizontalMouseDirection < 0)
+        {
+            _mouseMovingDirection = -1;
+        }
     }
 }

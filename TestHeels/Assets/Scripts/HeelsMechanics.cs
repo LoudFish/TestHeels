@@ -21,9 +21,26 @@ public class HeelsMechanics : MonoBehaviour
         _heelsCollider = transform.GetChild(1).gameObject.GetComponent<BoxCollider>();
     }
 
-    private void Update()
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.H))
+    //    {
+    //        //rise player and make heel collider bigger
+    //        RiseUpPlayer(_heelSize);
+
+    //        GrowHeelsCollider(1);
+
+    //        //make heel graphics bigger
+    //        GrowHeelsGraphics(leftHeel, 1);
+    //        GrowHeelsGraphics(rightHeel, 1);
+
+    //        heelsCount++;
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if(other.gameObject.CompareTag("HeelsPickUp"))
         {
             //rise player and make heel collider bigger
             RiseUpPlayer(_heelSize);
@@ -35,6 +52,8 @@ public class HeelsMechanics : MonoBehaviour
             GrowHeelsGraphics(rightHeel, 1);
 
             heelsCount++;
+
+            Destroy(other.gameObject);
         }
     }
 

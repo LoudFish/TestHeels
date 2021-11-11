@@ -27,11 +27,8 @@ public class PlayerSlide : MonoBehaviour
         {
             isRotated = true;
 
-            heels.localRotation = Quaternion.Euler(0f, 0f, 90f);
-
             float colliderCenter = heelCollider.size.y * 0.5f;
-
-            heels.localPosition = new Vector3(-colliderCenter, -0.25f, 0f);
+            RotateHeelsCollider(Quaternion.Euler(0f, 0f, 90f), new Vector3(-colliderCenter, -0.25f, 0f));
         }
 
         if (Input.GetKeyDown(KeyCode.T))
@@ -40,9 +37,14 @@ public class PlayerSlide : MonoBehaviour
 
             transform.position = new Vector3(transform.position.x, playerYPosition, transform.position.z);
 
-            heels.localRotation = originalRotation;
-
-            heels.localPosition = originalPosition;
+            RotateHeelsCollider(originalRotation, originalPosition);
         }
+    }
+
+    private void RotateHeelsCollider(Quaternion rotation, Vector3 desiredPosition)
+    {
+        heels.localRotation = rotation;
+
+        heels.localPosition = desiredPosition;
     }
 }

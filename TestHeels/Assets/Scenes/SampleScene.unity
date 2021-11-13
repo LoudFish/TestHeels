@@ -2910,6 +2910,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _strafeSpeed: 6
   _forwardSpeed: 5
+  onFinish: 0
+  pose: 0
   finished: 0
 --- !u!114 &1397974523
 MonoBehaviour:

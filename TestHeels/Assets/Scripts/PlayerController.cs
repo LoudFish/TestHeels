@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _forwardSpeed = 5f;
 
     public bool onFinish = false;
-    private bool _pose = false;
+    public bool pose = false;
     public bool finished = false;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(!_pose) _playerRigidbody.velocity = new Vector3(_playerRigidbody.velocity.x, _playerRigidbody.velocity.y, _forwardSpeed);
+        if(!finished) _playerRigidbody.velocity = new Vector3(_playerRigidbody.velocity.x, _playerRigidbody.velocity.y, _forwardSpeed);
     }
 
     private void FixedUpdate()
@@ -41,10 +41,8 @@ public class PlayerController : MonoBehaviour
 
         if(other.gameObject.CompareTag("PoseTrigger"))
         {
-            _pose = true;
+            pose = true;
             finished = true;
-
-            gameObject.GetComponent<PlayerController>().enabled = false;
         }
     }
 

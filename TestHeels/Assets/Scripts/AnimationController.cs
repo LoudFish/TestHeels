@@ -9,6 +9,10 @@ public class AnimationController : MonoBehaviour
 
     private void Update()
     {
+
+        playerAnimator.SetBool("IsPosing", PlayerController.Instance.pose);
         playerAnimator.SetFloat("ForwardVelocity", playerRigidBody.velocity.z);
+
+        
     }
 }

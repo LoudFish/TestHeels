@@ -13,7 +13,7 @@ public class InputController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !PlayerController.Instance.onFinish)
         {
             _touchStart = true;
 

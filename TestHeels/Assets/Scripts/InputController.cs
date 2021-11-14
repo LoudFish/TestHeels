@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
+    public delegate void OnFirstInput(bool touched);
+    public event OnFirstInput OnFirstInputEvent;
+
     private bool _touchStart = false;
     private Vector3 _touchPont;
 
@@ -15,6 +18,8 @@ public class InputController : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && !PlayerController.Instance.onFinish)
         {
+            OnFirstInputEvent?.Invoke(true);
+
             _touchStart = true;
 
             DetectMouseMoving();

@@ -70,7 +70,7 @@ public class HeelsMechanics : MonoBehaviour
             {
                 if (heelsCount > 0 && angle != 0)
                 {
-                    RiseUpPlayer(0.08f);
+                    RiseUpPlayer(0.09f);
 
                     //heels collider
                     GrowHeelsCollider(-1);

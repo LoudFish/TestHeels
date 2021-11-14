@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
 
+    public delegate void OnFinish(bool finished);
+    public event OnFinish OnFinishEvent;
+
     private Rigidbody _playerRigidbody;
 
     [SerializeField] private float _strafeSpeed = 10f;
@@ -25,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if(!finished) _playerRigidbody.velocity = new Vector3(_playerRigidbody.velocity.x, _playerRigidbody.velocity.y, _forwardSpeed);
+
+        OnFinishEvent?.Invoke(finished);
     }
 
     private void FixedUpdate()

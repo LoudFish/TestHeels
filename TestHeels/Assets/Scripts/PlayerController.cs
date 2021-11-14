@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
+    public HeelsMechanics heelsMechanics;
 
     public delegate void OnFinish(bool finished);
     public event OnFinish OnFinishEvent;
@@ -57,7 +58,11 @@ public class PlayerController : MonoBehaviour
         {
             float angle = Vector3.Dot(collision.GetContact(0).normal, Vector3.forward);
 
-            if(angle != 0 && onFinish)
+            //if(angle != 0 && onFinish)
+            //{
+            //    finished = true;
+            //}
+            if (heelsMechanics.heelsCount == 0 && onFinish)
             {
                 finished = true;
             }

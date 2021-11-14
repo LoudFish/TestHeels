@@ -14,7 +14,7 @@ public class HeelsMechanics : MonoBehaviour
     private Vector3 _colliderHeight = new Vector3(0f, _heelSize, 0f);
     private Vector3 _colliderOffset = new Vector3(0f, _colliderCenterOffset, 0f);
 
-    private int heelsCount = 0;
+    public int heelsCount = 0;
 
     private void Awake()
     {

@@ -22,7 +22,6 @@ public class GameController : MonoBehaviour
     private void StartGame(bool started)
     {
         playerController.enabled = true;
-        //PlayerController.Instance.gameObject.GetComponent<PlayerController>().enabled = true;
     }
 
     private void FinishGame(bool finished)

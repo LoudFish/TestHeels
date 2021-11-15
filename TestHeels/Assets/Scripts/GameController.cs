@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
 {
     public PlayerController playerController;
     public InputController inputController;
+    public HeelsMechanics heelsMechanics;
+
     public Text levelIndexText;
 
     private void Start()
@@ -17,6 +19,7 @@ public class GameController : MonoBehaviour
 
         PlayerController.Instance.OnFinishEvent += FinishGame;
         inputController.OnFirstInputEvent += StartGame;
+        heelsMechanics.OnDeathEvent += PlayerLose;
     }
 
     private void StartGame(bool started)
@@ -26,6 +29,16 @@ public class GameController : MonoBehaviour
 
     private void FinishGame(bool finished)
     {
-        //Debug.Log("finished? " + finished);
+        if (finished) Invoke("LoadNextScene", 3f);
+    }
+
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void PlayerLose()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

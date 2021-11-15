@@ -58,10 +58,6 @@ public class PlayerController : MonoBehaviour
         {
             float angle = Vector3.Dot(collision.GetContact(0).normal, Vector3.forward);
 
-            //if(angle != 0 && onFinish)
-            //{
-            //    finished = true;
-            //}
             if (heelsMechanics.heelsCount == 0 && onFinish)
             {
                 finished = true;

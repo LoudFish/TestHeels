@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class HeelsMechanics : MonoBehaviour
 {
+    public delegate void OnDeath();
+    public event OnDeath OnDeathEvent;
+
     private BoxCollider _heelsCollider;
 
     public Transform leftHeel;
@@ -61,27 +64,34 @@ public class HeelsMechanics : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Stepp"))
         {
-            //from wich direction we hit obstacle
-            float angle = Vector3.Dot(collision.GetContact(0).normal, Vector3.forward);
-
             float wallSizeInHeels = collision.transform.localScale.y * 2f;
 
-            for (int i = 0; i < wallSizeInHeels; i++)
+            if (wallSizeInHeels > heelsCount && !PlayerController.Instance.onFinish)
             {
-                if (heelsCount > 0 && angle != 0)
+                OnDeathEvent?.Invoke();
+            }
+            else
+            {
+                //from wich direction we hit obstacle
+                float angle = Vector3.Dot(collision.GetContact(0).normal, Vector3.forward);
+
+                for (int i = 0; i < wallSizeInHeels; i++)
                 {
-                    RiseUpPlayer(0.09f);
+                    if (heelsCount > 0 && angle != 0)
+                    {
+                        RiseUpPlayer(0.09f);
 
-                    //heels collider
-                    GrowHeelsCollider(-1);
+                        //heels collider
+                        GrowHeelsCollider(-1);
 
-                    //heels graphics
-                    GrowHeelsGraphics(leftHeel, -1);
-                    GrowHeelsGraphics(rightHeel, -1);
+                        //heels graphics
+                        GrowHeelsGraphics(leftHeel, -1);
+                        GrowHeelsGraphics(rightHeel, -1);
 
-                    heelsCount--;
+                        heelsCount--;
+                    }
+                    else return;
                 }
-                else return;
             }
         }
     }

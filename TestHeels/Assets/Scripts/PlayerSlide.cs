@@ -58,7 +58,9 @@ public class PlayerSlide : MonoBehaviour
         {
             isRotated = false;
 
-            transform.position = new Vector3(transform.position.x, playerYPosition, transform.position.z);
+            float height = Mathf.Abs(playerYPosition) - Mathf.Abs(transform.position.y);
+
+            transform.position += new Vector3(0f, height, 0f);
 
             RotateHeelsCollider(originalRotation, originalPosition);
         }

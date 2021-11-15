@@ -376,6 +376,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 543037440459882021, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433775564354890141, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2700711635369017265, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.67
@@ -388,9 +396,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.67
       objectReference: {fileID: 0}
+    - target: {fileID: 6638156458038484167, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8362228745049988443, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
       propertyPath: m_Name
       value: Ground (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362228745049988443, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
@@ -728,7 +744,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &487258579
 Transform:
@@ -847,7 +863,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &684991971
 Transform:
@@ -1035,7 +1051,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &852222129
 Transform:
@@ -1254,7 +1270,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &927827279
 Transform:
@@ -1435,7 +1451,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1104221229
 Transform:
@@ -1604,7 +1620,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1169448588
 Transform:
@@ -1701,7 +1717,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1312808001
 Transform:
@@ -1831,6 +1847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlideTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 2181233301418127467, guid: 090fec1e6653e784ba8c49598b8afb19, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 090fec1e6653e784ba8c49598b8afb19, type: 3}
 --- !u!1 &1365070381
@@ -1850,7 +1870,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1365070382
 Transform:
@@ -2454,7 +2474,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1738160334
 Transform:
@@ -2554,7 +2574,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1895794941
 Transform:
@@ -3025,6 +3045,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 543037440459882021, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433775564354890141, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2700711635369017265, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.67
@@ -3037,9 +3065,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.67
       objectReference: {fileID: 0}
+    - target: {fileID: 6638156458038484167, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8362228745049988443, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362228745049988443, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90ae9256c6c2eec4db08a6aed1dd0b1e, type: 3}
